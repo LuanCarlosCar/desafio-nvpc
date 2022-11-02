@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GetServerSideProps } from "next";
 import { ChangeEvent, useRef, useState } from "react";
 import Card from "../components/Card";
@@ -11,7 +12,7 @@ import {
   ListCard,
   NavListFilter,
   Search,
-} from "./_styles";
+} from "../styles/stylesHome";
 
 interface Props {
   dataRepoList: RepoProps[];
@@ -44,8 +45,9 @@ export default function Home({ dataRepoList }: Props) {
     const check: boolean[] = [];
 
     Object.entries(selectedFilter).forEach((keyForm) => {
+
       if (
-        repo[keyForm[0]] === keyForm[1] ||
+        repo[keyForm[0]] as string === keyForm[1] ||
         (keyForm[1] === true && repo[keyForm[0]])
       ) {
         check.push(true);
