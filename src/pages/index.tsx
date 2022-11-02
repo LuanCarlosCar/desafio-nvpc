@@ -109,7 +109,7 @@ export default function Home({ dataRepoList }: Props) {
       </Header>
       <NavListFilter>
         <div>
-          <p className="label">Filtros:</p>{" "}
+          <p className="label">Filtros:</p>
           {Object.entries(itensFilter).map((item) => (
             <CheckBox
               selectedFilter={selectedFilter}
